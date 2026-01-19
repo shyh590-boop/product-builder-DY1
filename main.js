@@ -1,39 +1,23 @@
-class LottoNumbers extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.render();
-  }
+const dinnerMenus = [
+    "치킨",
+    "피자",
+    "햄버거",
+    "떡볶이",
+    "김치찌개",
+    "된장찌개",
+    "삼겹살",
+    "파스타",
+    "초밥",
+    "라면"
+];
 
-  generateNumbers() {
-    const numbers = new Set();
-    while (numbers.size < 6) {
-      numbers.add(Math.floor(Math.random() * 45) + 1);
-    }
-    return Array.from(numbers).sort((a, b) => a - b);
-  }
+const generateBtn = document.getElementById('generate-btn');
+const menuDisplay = document.getElementById('menu-display');
 
-  render() {
-    const numbers = this.generateNumbers();
-    const container = document.createElement('div');
-    container.classList.add('numbers-container');
-
-    numbers.forEach(number => {
-      const numberElement = document.createElement('div');
-      numberElement.classList.add('number');
-      numberElement.textContent = number;
-      container.appendChild(numberElement);
-    });
-
-    this.shadowRoot.innerHTML = ''; // Clear previous numbers
-    this.shadowRoot.appendChild(container);
-  }
-}
-
-customElements.define('lotto-numbers', LottoNumbers);
-
-document.getElementById('generate-btn').addEventListener('click', () => {
-  document.querySelector('lotto-numbers').render();
+generateBtn.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * dinnerMenus.length);
+    const selectedMenu = dinnerMenus[randomIndex];
+    menuDisplay.textContent = `오늘의 메뉴는 ${selectedMenu} 입니다!`;
 });
 
 document.getElementById('dark-mode-toggle').addEventListener('click', () => {
