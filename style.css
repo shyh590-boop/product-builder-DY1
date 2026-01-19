@@ -17,6 +17,9 @@ body.dark-mode {
 
 main {
     text-align: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem 0;
 }
 
 h1 {
