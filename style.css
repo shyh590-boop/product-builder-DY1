@@ -164,3 +164,7 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
     background-color: #218838;
 }
+
+#disqus_thread {
+    margin-top: 1rem;
+}
