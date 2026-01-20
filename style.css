@@ -77,6 +77,23 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Auth Link */
+.auth-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
 /* Dashboard Layout */
 .dashboard-wrapper {
     display: flex;
